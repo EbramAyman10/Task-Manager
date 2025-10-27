@@ -1,0 +1,37 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Home from "./pages/home";
+import About from "./pages/about";
+import NotFound from "./pages/notfound";
+import { useEffect, useState } from "react";
+import Tasks from "./pages/taskpage";
+import TasksPage from "./pages/taskpage";
+
+function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const raw = localStorage.getItem("tasks");
+    if (raw) setTasks(JSON.parse(raw));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home tasks={tasks} />} />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="/tasks"
+          element={<TasksPage tasks={tasks} setTasks={setTasks} />}
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
