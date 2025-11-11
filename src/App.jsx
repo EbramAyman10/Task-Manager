@@ -1,12 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
-import About from "./pages/about";
 import NotFound from "./pages/notfound";
 import { useEffect, useState } from "react";
 import Tasks from "./pages/taskpage";
 import TasksPage from "./pages/taskpage";
-import './App.css';
+import "./App.css";
 function App() {
   const [tasks, setTasks] = useState([]);
 
@@ -23,7 +22,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home tasks={tasks} />} />
-        <Route path="/about" element={<About />} />
         <Route
           path="/tasks"
           element={<TasksPage tasks={tasks} setTasks={setTasks} />}

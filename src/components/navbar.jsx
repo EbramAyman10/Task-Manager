@@ -19,18 +19,7 @@ function Navbar() {
               </NavLink>
             </li>
 
-            <li className="nav-item">
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link active text-warning"
-                    : "nav-link text-white"
-                }
-              >
-                About
-              </NavLink>
-            </li>
+        
             <li className="nav-item">
               <NavLink
                 to="/tasks"
