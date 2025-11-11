@@ -23,7 +23,7 @@ export default function TaskForm({
     setDue(initial.due || "");
     setPriority(initial.priority || "");
     setError("");
-  }, [initial?.id]);
+  }, [initial.id]);
 
   const submit = (e) => {
     e.preventDefault();

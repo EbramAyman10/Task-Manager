@@ -6,7 +6,7 @@ import NotFound from "./pages/notfound";
 import { useEffect, useState } from "react";
 import Tasks from "./pages/taskpage";
 import TasksPage from "./pages/taskpage";
-
+import './App.css';
 function App() {
   const [tasks, setTasks] = useState([]);
 

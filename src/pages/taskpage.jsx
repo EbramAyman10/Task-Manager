@@ -65,7 +65,7 @@ export default function TasksPage({ tasks, setTasks }) {
         </div>
       )}
       <div>
-        <table className="text-center d-flex flex-column text-center align-items-center">
+        <table className="table-class text-center d-flex flex-column text-center align-items-center">
           <thead>
             <tr>
               <th>#</th>
@@ -79,7 +79,7 @@ export default function TasksPage({ tasks, setTasks }) {
           <tbody>
             {tasks.length == 0 ? (
               <tr>
-                <td>No Tasks Yet</td>
+                <td colSpan={6}>No Tasks Yet</td>
               </tr>
             ) : (
               tasks.map((task) => (

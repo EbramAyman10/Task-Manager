@@ -1,9 +1,10 @@
+
 export default function Home({ tasks }) {
   const total = tasks.length;
   const completed = tasks.filter((task) => task.completed).length;
   return (
     <>
-      <div className="container-fluid ms-3 mt-3 text-center">
+      <div className="home container-fluid ms-3 mt-3 text-center">
         <h2>Welcome to Task Manager</h2>
         <div style={{ display: "flex", gap: 12 }}>
           <div className="box">
